@@ -7,5 +7,6 @@
     "sourceMap": true,
     "outDir": "dist"
   },
+  "exclude": ["docker-compose.yml"],
   "lib": ["es2015"]
 }
