@@ -40,16 +40,16 @@ app.use(
 );
 (async () => {
   const client = new pgClient({
-    host: process.env.PG_HOST,
-    user: process.env.PG_USERNAME,
-    password: process.env.PG_PASSWORD,
-    port: Number.parseInt(process.env.PG_PORT),
-    database: process.env.PG_DATABASE,
+    host: process.env.POSTGRES_HOST,
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    port: Number.parseInt(process.env.POSTGRES_PORT),
+    database: process.env.POSTGRES_DB,
   });
   try {
     await client.connect();
-    const query = await client.query(`SELECT * FROM users LIMIT 1`);
-    debugLogDB("db connected " + query.rows[0].name);
+    // const query = await client.query(`SELECT * FROM users LIMIT 1`);
+    debugLogDB("db connected ");
     //c
   } catch (err) {
     debugLogDB(err);
