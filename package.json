@@ -7,7 +7,11 @@
     "start": "npx tsc && node dist/index.js",
     "debug": "SET DEBUG=* && nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf *.lock *lock.json"
+    "clean": "rm -rf *.lock *lock.json",
+    "del": "rm -rf dist",
+    "knex:migrate:make": "knex migrate:make -x ts",
+    "knex:migrate:latest": "knex migrate:latest",
+    "knex:migrate:rollback": "knex migrate:rollback"
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +30,10 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-winston": "^4.0.5",
+    "knex": "^0.21.17",
+    "objection": "^2.2.14",
     "pg": "^8.5.1",
+    "ts-node": "^9.1.1",
     "winston": "^3.3.3"
   }
 }
